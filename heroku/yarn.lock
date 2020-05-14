@@ -458,10 +458,10 @@
     heroku-cli-util "^8.0.11"
     shellwords "^0.1.1"
 
-"@heroku-cli/plugin-run@^7.41.0":
-  version "7.41.0"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-run/-/plugin-run-7.41.0.tgz#019312ed255ad75dd53f9e2a3b0a251cf1f818f8"
-  integrity sha512-jNas7jat2siUOepOJXCCz+32y8z4HBqd2FWbFd/pUMkcWwhqdDNpoVZIQzE8t3MOoqkCF0E04LvRyfW/6/pojg==
+"@heroku-cli/plugin-run@^7.41.1":
+  version "7.41.1"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-run/-/plugin-run-7.41.1.tgz#7ed0a88fc596c61cfe990ca68946768d8a474283"
+  integrity sha512-XH4nf8Gt2a9rxoU5UIglLNHY8kzwimbVsZyayXtqr9Dv0tUwqBoGGBAKNHcJcNEQmgenfoyKvshNb6dSQNEZQQ==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/command" "^8.3.0"
