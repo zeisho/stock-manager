@@ -1,4 +1,28 @@
-yoshida:
-  name: Yoshida Example
-  email: yoshida@example.com
-  password_digest: <%= User.digest('password')%>
+matsuda:
+  name: Matsuda Juujirou
+  email: matsuda@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  
+honda:
+  name: Honda Souichirou
+  email: honda@example.com
+  password_digest: <%= User.digest('password') %>
+  
+ayukawa:
+  name: Ayukawa Yosisuke
+  email: ayukawa@example.com
+  password_digest: <%= User.digest('password') %>
+  
+toyoda:
+  name: Toyoda Kiitirou
+  email: toyoda@example.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User#{n}" %>
+  email: <%= "user#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
+

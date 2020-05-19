@@ -1,0 +1,15 @@
+<% provide(:title, "Edit user") %>
+<% provide(:button_text, "保存") %>
+<% provide(:url, user_path) %>
+<h1>プロフィール編集</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'form' %>
+    
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target='_brank' rel="noopner">変更</a>
+    </div>
+  </div>
+</div>

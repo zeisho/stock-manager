@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
   
   def setup
-    @user = users(:yoshida)
+    @user = users(:matsuda)
   end
   
   test "should " do
