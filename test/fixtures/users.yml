@@ -1,28 +1,45 @@
 matsuda:
   name: Matsuda Juujirou
-  email: matsuda@example.com
+  email: mazda@example.com
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
   
 honda:
   name: Honda Souichirou
   email: honda@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
   
 ayukawa:
   name: Ayukawa Yosisuke
-  email: ayukawa@example.com
+  email: nissan@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
   
 toyoda:
   name: Toyoda Kiitirou
-  email: toyoda@example.com
+  email: toyota@example.com
   password_digest: <%= User.digest('password') %>
-
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  
+mitsuoka:
+  name: Mitsuoka Susumu
+  email: mituoka@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: false
+  activated_at: <%= Time.zone.now %>
+  
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User#{n}" %>
   email: <%= "user#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
 

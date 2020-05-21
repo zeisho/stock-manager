@@ -1,0 +1,5 @@
+ご機嫌よう、<%= @user.name %>さん、
+下のリンクをクリックするとアカウントを登録できます。
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+

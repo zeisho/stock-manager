@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Stock Managerへようこそ！"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "アカウント本登録用のメールを送信しました。メールから本登録の手続きを行ってください。"
+      redirect_to root_url
     else
       render 'new'
     end
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
   
   def edit
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
   
   def destroy

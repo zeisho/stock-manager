@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:matsuda)
     @other_user = users(:honda)
+    @non_activeted_user = users(:mitsuoka)
   end
   
   test "should get new" do
@@ -69,6 +70,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference 'User.count' do
       delete user_path(@user)
     end
+    assert_redirected_to root_url
+  end
+  
+  test "should not allow the not activated attribute" do
+    log_in_as(@non_activeted_user)
+    assert_not @non_activeted_user.activated?
+    get users_path
+    assert_select "a[href=?]", user_path(@non_activeted_user), count: 0
+    get user_path(@non_activeted_user)
     assert_redirected_to root_url
   end
 
