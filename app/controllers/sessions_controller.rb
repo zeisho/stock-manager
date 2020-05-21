@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
         redirect_back_or @user
       else
+        @user.send_activation_email
         message = "無効なアカウントです。"
         message += "本登録用メールからアカウント有効化手続きを行ってください"
         flash[:warning] = message
