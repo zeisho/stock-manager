@@ -1,0 +1,48 @@
+roadster: 
+  name: "Roadster"
+  created_at: <%= 10.minutes.ago %>
+  user: matsuda
+  
+az_1:
+  name: "AZ-1"
+  created_at: <%= 3.minutes.ago %>
+  user: matsuda
+  
+rx_7:
+  name: "RX-7"
+  created_at: <%= 2.minutes.ago %>
+  user: matsuda
+  
+rx_vision:
+  name: "RX-VISION"
+  created_at: <%= Time.zone.now %>
+  user: matsuda
+  
+s2000:
+  name: "S2000"
+  created_at: <%= 21.years.ago%>
+  user: honda
+  
+nsx:
+  name: "NSX"
+  created_at: <%= 25.years.ago%>
+  user: honda
+  
+skyline:
+  name: "SKYLINE"
+  created_at: "50.years.ago"
+  user: ayukawa
+  
+fairlady_z:
+  name: "FAIRLADY Z"
+  created_at: "50.years.ago"
+  user: ayukawa
+ 
+  
+  
+<% 50.times do |n| %>
+stock_<%= n %>:
+  name: <%= Faker::Lorem.sentence(2) %>
+  created_at: <%= 40.days.ago %>
+  user: matsuda
+<% end %>

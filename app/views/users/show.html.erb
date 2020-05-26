@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.stocks.any? %>
+      <h3>在庫数 (<%= @user.stocks.count %>)</h3>
+      <ol class="stocks">
+        <%= render @stocks %>
+      </ol>
+      <%= will_paginate @stocks %>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,10 @@
+<li id="stock-<%= stock.id %>">
+  <span class="name"><%= stock.name %></span>
+  <span class="timestamp">
+    added <%= time_ago_in_words(stock.created_at) %> ago.
+    <% if current_user?(stock.user) %>
+      <%= link_to "削除", stock, method: :delete,
+                        data: {confirm: "削除を実行しますか?" } %>
+    <% end %>
+  </span>
+</li>

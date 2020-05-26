@@ -1,0 +1,4 @@
+<%= link_to gravatar_for(current_user, size: 50), current_user %>
+<h1><%= current_user.name %></h1>
+<span><%= link_to "在庫一覧", current_user %></span>
+<span>在庫数：<%= current_user.stocks.count %></span>
