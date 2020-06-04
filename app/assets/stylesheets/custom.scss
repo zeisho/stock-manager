@@ -228,15 +228,22 @@ input {
   padding-top: 0;
 }
 
-.name {
+.name, .category, .maker {
   display: block;
+}
+
+.name {
   margin-left: 60px;
+}
+
+.category, .maker {
+  margin-left: 70px;
 }
 
 .timestamp {
   color: $gray-light;
   display: block;
-  margin-left: 60px;
+  margin-left: 70px;
 }
 
 aside {

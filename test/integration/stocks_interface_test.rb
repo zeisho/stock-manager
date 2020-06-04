@@ -17,6 +17,8 @@ class StocksInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # 有効な送信
     name = "VISION COUPE"
+    category = "その他"
+    maker = "その他"
     assert_difference 'Stock.count', 1 do
       post stocks_path, params: { stock: {name: name} }
     end
@@ -24,6 +26,8 @@ class StocksInterfaceTest < ActionDispatch::IntegrationTest
     follow_redirect!
     get user_path(@user)
     assert_match name, response.body
+    assert_match category, response.body
+    assert_match maker, response.body
     # 在庫の削除
     assert_select 'a', text: '削除'
     first_stock = @user.stocks.paginate(page: 1).first

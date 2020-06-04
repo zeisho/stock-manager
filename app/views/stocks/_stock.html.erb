@@ -1,5 +1,7 @@
 <li id="stock-<%= stock.id %>">
   <span class="name"><%= stock.name %></span>
+  <span class="category">カテゴリ：<%= stock.category %></span>
+  <span class="maker">メーカー：<%= stock.maker %></span>
   <span class="timestamp">
     added <%= time_ago_in_words(stock.created_at) %> ago.
     <% if current_user?(stock.user) %>
