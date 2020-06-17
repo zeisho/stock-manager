@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -24,4 +23,6 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   
   resources :stocks, only: [:create, :destroy]
+  
+  resources :inquirys, only: [:new, :create]
 end
