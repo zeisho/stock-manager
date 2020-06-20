@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class InquirysControllerTest < ActionDispatch::IntegrationTest
+  
+  def setup
+    @user = users(:matsuda)
+    @other_user = users(:honda)
+    @inquiry = inquiries(:hoge)
+  end
+  
   test "inquiry columns validation" do
     name = "user"
     email = "example@example.com"
@@ -22,6 +29,20 @@ class InquirysControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'Inquiry.count', 1 do
       post inquirys_path(name: name, email: email, message: message)
     end
+  end
+  
+  test "should redirect index when non_admin" do
+    log_in_as(@other_user)
+    get inquirys_path
+    assert_redirected_to root_url
+  end
+  
+  test "should redirect destroy when logged in as non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference 'Inquiry.count' do
+      delete inquiry_path(@inquiry)
+    end
+    assert_redirected_to root_url
   end
 
 end

@@ -473,10 +473,10 @@
     debug "^4.1.1"
     tslib "^1"
 
-"@heroku-cli/plugin-spaces@^7.39.2":
-  version "7.39.2"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-spaces/-/plugin-spaces-7.39.2.tgz#cb5935775a4fe4c950319887c8f152e606009c88"
-  integrity sha512-UGgYJWuGCBO0ofm7mfOpx6cC4yBc803jfs+HPiMcgGAUlBmiPHGh47SYjYsm55/F4kG9s5ApPUGSHY2YIfzUgg==
+"@heroku-cli/plugin-spaces@^7.42.1":
+  version "7.42.1"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-spaces/-/plugin-spaces-7.42.1.tgz#6301b3c42e409f4bfaa1a8f99a59f9695b7a99f6"
+  integrity sha512-3c0NPkCF1UZZI42igaacvGsY4uERcRt+k/x0MkK4o41bHVx5mXXcjxKikVhUJO2mt2E2ZjeSYfior6JwCEjdOQ==
   dependencies:
     "@heroku-cli/command" "^8.3.0"
     "@heroku-cli/notifications" "^1.2.2"

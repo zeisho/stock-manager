@@ -1,0 +1,20 @@
+<% provide(:title, 'Inquiry index') %>
+
+<h1>お問い合わせ一覧</h1>
+
+<%= will_paginate %>
+  
+  <ul class="inquirys">
+    <% @inquirys.each do |inquiry| %>
+      <li>
+        <span><%= inquiry.name %></span>
+        <span><%= inquiry.email %></span>
+        <span><%= inquiry.message %></span>
+        <% if current_user.admin? %>
+          | <%= link_to "削除", inquiry, method: :delete, data: {confirm: "本当に削除しますか？" } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  
+<%= will_paginate %>

@@ -1,11 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+hoge:
+  name: honda
+  email: honda@example.com
+  message: hoge
 
-one:
-  name: MyString
-  email: MyString
-  message: MyString
-
-two:
-  name: MyString
-  email: MyString
-  message: MyString
+hogehoge:
+  name: honda
+  email: honda@example.com
+  message: hogehoge
+  
+<% 50.times do |n| %>
+inquiry_<%= n %>:
+  name: inquiry_<%= n %>
+  email: <%= "user#{n}@example.com" %>
+  message: hoge<%= n %>
+  created_at: <%= 40.days.ago %>
+<% end %>

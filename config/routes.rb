@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   
   resources :stocks, only: [:create, :destroy]
   
-  resources :inquirys, only: [:new, :create]
+  resources :inquirys, only: [:new, :create, :destroy, :index]
 end
