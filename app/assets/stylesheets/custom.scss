@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url("tablet.scss");
+@import url("smartphone.scss");
 
 // mixins, variables, etc.
 
@@ -75,6 +77,10 @@ p {
     color: #fff;
     text-decoration: none;
   }
+}
+
+.menu-icon {
+  display: none;
 }
 
 // footer
@@ -168,7 +174,7 @@ input, textarea, select, uneditable-input {
 }
 
 input {
-  height: auto !important;
+  height: auto;
 }
 
 #error_explanation {
@@ -200,6 +206,10 @@ input {
   margin-left: 0;
 }
 
+textarea {
+  height: 120px !important;
+}
+
 // Users, Inquirys index
 
 .users, .inquirys {
@@ -220,6 +230,10 @@ input {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+  }
+  
+  .name {
+    font-size: 20px;
   }
 }
 
@@ -261,8 +275,25 @@ aside {
     padding-top: 10px;
     border-top: 1px solid #e8e8e8;
   }
+  
+  li {
+    margin-bottom: 20px;
+  }
 }
 
 .help-list {
   margin-left: 150px;
+}
+
+// user_index
+.user-list {
+  font-size: 20px;
+  a {
+    display: inline-block;
+    margin: 4px;
+  }
+  
+  .index-user-name {
+    color: #000;
+  }
 }

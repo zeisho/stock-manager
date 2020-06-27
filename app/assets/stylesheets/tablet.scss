@@ -1,0 +1,94 @@
+@media screen and (max-width: 767px) {
+  // typography
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+li {
+  font-size:16px;
+}
+  
+  // header
+  #logo {
+    font-size: 24px;
+  }
+  
+  .navbar-right {
+    display: none;
+  }
+  
+  .menu-icon {
+    color: #fff;
+    float: right;
+    margin-top: 12px;
+  }
+  
+  .gravatar {
+    width: 80px;
+  }
+  
+  // footer
+
+footer li {
+      clear: both;
+}
+  
+  // home when logged in
+  .user_info {
+    h1 {
+      font-size: 28px;
+    }
+    
+    span {
+      font-size: 20px;
+      margin-top: 8px;
+    }
+  }
+  
+  // form
+    label {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    
+    input {
+      height: 32px;
+      font-size: 20px;
+    }
+    
+    select {
+      height: 32px;
+      font-size: 20px;
+    }
+    
+    .btn {
+      height: 34px;
+      font-size: 20px;
+      margin-top: 50px;
+      line-height: 20px;
+    }
+    
+  #signup_link {
+    font-size: 20px;
+  }
+  
+  // help
+  .help-list {
+    margin-left: 0;
+  }
+  
+  .helps li {
+      font-size: 16px;
+  }
+  
+  .app-name-footer {
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+}
