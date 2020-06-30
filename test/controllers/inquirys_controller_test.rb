@@ -15,19 +15,19 @@ class InquirysControllerTest < ActionDispatch::IntegrationTest
     get contact_url
     # 無効な名前
     assert_no_difference 'Inquiry.count' do
-      post inquirys_path(name: "", email: email, message: message)
+      post inquirys_path, params: { inquiry: {name: "", email: email, message: message } }
     end
     # 無効なアドレス
     assert_no_difference 'Inquiry.count' do
-      post inquirys_path(name: name, email: "", message: message)
+      post inquirys_path, params: { inquiry: {name: name, email: "user@invalid", message: message } }
     end
     # 無効なメッセージ
     assert_no_difference 'Inquiry.count' do
-      post inquirys_path(name: name, email: email, message: "")
+      post inquirys_path, params: { inquiry: {name: name, email: email, message: "" } }
     end
     # 有効な送信
     assert_difference 'Inquiry.count', 1 do
-      post inquirys_path(name: name, email: email, message: message)
+      post inquirys_path, params: { inquiry: {name: name, email: email, message: message } }
     end
   end
   
