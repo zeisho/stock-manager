@@ -1,3 +1,10 @@
 @media screen and (max-width: 479px) {
+  // header
+  .navbar-toggle {
+    margin-right: 0;
+  }
   
+  .navbar-collapse {
+    width: 120px;
+  }
 }
