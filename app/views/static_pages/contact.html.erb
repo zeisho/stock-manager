@@ -1,7 +1,8 @@
 <% provide(:title, "Contact") %>
 <h1>お問い合わせ</h1>
 
-<%= form_for(:inquiry, url: inquirys_path) do |f| %>
+<%= form_for(@inquiry, url: inquirys_path) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   
   <%= f.label :name, "お名前" %>
   <%= f.text_field :name, class: 'form-control' %>
@@ -10,7 +11,7 @@
   <%= f.email_field :email, class: 'form-control' %>
   
   <%= f.label :message, "お問い合わせ内容" %>
-  <%= f.text_area :message, class: 'form-control' %>
+  <%= f.text_area :message, class: 'form-control', rows: 10 %>
   
   <%= f.submit "送信", class: "btn btn-primary" %>
   

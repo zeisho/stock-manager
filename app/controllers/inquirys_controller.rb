@@ -11,7 +11,6 @@ class InquirysController < ApplicationController
       flash[:success] = "お問い合わせを送信しました。"
       redirect_to root_url
     else
-      flash.now[:danger] = "送信に失敗しました。"
       render "static_pages/contact"
     end
   end
