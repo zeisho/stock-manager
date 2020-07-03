@@ -7,12 +7,13 @@
   <ul class="inquirys">
     <% @inquirys.each do |inquiry| %>
       <li>
-        <span><%= inquiry.name %></span>
-        <span><%= inquiry.email %></span>
-        <span><%= inquiry.message %></span>
-        <% if current_user.admin? %>
-          | <%= link_to "削除", inquiry, method: :delete, data: {confirm: "本当に削除しますか？" } %>
-        <% end %>
+        <span class="inquiry-name"><%= inquiry.name %></span>
+        <span class="inquiry-email"><%= inquiry.email %></span>
+        <span class="inquiry-message"><%= simple_format inquiry.message %></span>
+        <span class="inquiry-timestamp">
+          <%= time_ago_in_words(inquiry.created_at) %>前に追加
+            | <%= link_to "削除", inquiry, method: :delete, data: {confirm: "本当に削除しますか？" } %>
+        </span>
       </li>
     <% end %>
   </ul>

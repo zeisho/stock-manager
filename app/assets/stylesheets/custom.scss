@@ -220,6 +220,28 @@ input {
   }
 }
 
+.users-count {
+  margin-top: 120px;
+  margin-left: 20px;
+}
+
+.inquiry-name, .inquiry-email, .inquiry-message {
+  display: block;
+}
+
+.inquiry-email {
+  margin-top: 10px;
+}
+
+.inquiry-message, .inquiry-timestamp {
+  margin: 10px 20px;
+}
+
+.inquiry-message {
+  width: 90%;
+  border: solid 1px #e8e8e8;
+}
+
 // stocks
 
 .stocks {

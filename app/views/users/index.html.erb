@@ -1,6 +1,8 @@
 <% provide(:title, 'All users') %>
 <h1>ユーザー一覧</h1>
 
+<h3 class="users-count">ユーザー数 (<%= @users.count %>人)</h3>
+
 <%= will_paginate %>
 
 <ul class="users">
