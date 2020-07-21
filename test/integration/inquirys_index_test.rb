@@ -4,6 +4,7 @@ class InquirysIndexTest < ActionDispatch::IntegrationTest
   
   def setup
     @admin = users(:matsuda)
+    @non_admin = users(:honda)
     @inquiry = inquiries(:hoge)
   end
   
@@ -12,16 +13,22 @@ class InquirysIndexTest < ActionDispatch::IntegrationTest
     get inquirys_path
     assert_template 'inquirys/index'
     assert_select 'div.pagination'
-    first_page_of_inquirys = Inquiry.paginate(page: 1)
-    first_page_of_inquirys.each do |inquiry|
+    Inquiry.paginate(page: 1).each do |inquiry|
       assert_select 'span', text: inquiry.name
       assert_select 'span', text: inquiry.email
       assert_select 'span', text: inquiry.message
-      assert_select 'a[href=?]', inquiry_path(inquiry), text: "削除"
     end
     assert_difference 'Inquiry.count', -1 do
       delete inquiry_path(@inquiry)
     end
+  end
+  
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@non_admin)
+    assert_no_difference 'Inquiry.count' do
+      delete inquiry_path(@inquiry)
+    end
+    assert_redirected_to root_url
   end
   
 end

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.where(activated: true).paginate(page: params[:page], per_page: 20)
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
   
   def destroy
